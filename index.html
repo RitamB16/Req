@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url(''); /* Replace with your desired background image */
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+
+            .container {
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                color: white; /* Ensures the text is visible over the background */
+            }
+
+            .header_text {
+                font-size: 30px;
+                margin: 20px 0;
+                font-weight: bold;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds text shadow for better visibility */
+            }
+
+            .gif_container {
+                margin: 20px 0;
+            }
+
+            .gif_container img {
+                width: 300px;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .buttons {
+                position: relative;
+                margin-top: 30px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 18px;
+                color: white;
+                background-color: #28a745;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.3s ease;
+                margin: 10px;
+            }
+
+            .btn:hover {
+                background-color: #218838;
+                transform: scale(1.1);
+            }
+
+            #yesButton {
+                background-color: #007bff;
+            }
+
+            #yesButton:hover {
+                background-color: #0056b3;
+            }
+
+            #noButton {
+                background-color: #dc3545;
+            }
+
+            #noButton:hover {
+                background-color: #c82333;
+            }
+
+            /* Stylish top placed important message */
+            .important-message {
+                position: absolute;
+                top: 20px; /* Adjusted for top placement */
+                left: 50%;
+                transform: translateX(-50%); /* Centered horizontally */
+                background-color: rgba(0, 0, 0, 0.6);
+                color: #ffbb33;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+                font-size: 18px;
+                max-width: 350px;
+                text-align: center;
+            }
+
+            .important-message span {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+        </style>
+    </head> 
+    <body>
+        <div class="important-message">
+            <p><span>Important:</span> Forget the things of last few days please!!😔😔</p>
+        </div>
+
+        <div class="container">
+            <div>
+                <h1 class="header_text">Very Very sorry!! please talk to me like before!!</h1>
+                <h1 class="header_text">Promise me, You must text back?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="emoji.jpg" alt="Cute animated illustration">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
+        </div>
+
+        <script>
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+
+            function moveButton() {
+                var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                document.getElementById('noButton').style.left = `${x}px`;
+                document.getElementById('noButton').style.top = `${y}px`;
+            }
+        </script> 
+    </body> 
+</html>
